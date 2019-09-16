@@ -1,0 +1,17 @@
+ 0.000 CONTINUE SOLVER BD 0.020 0.001 0. ABL
+ 
+ # time.000 BREAKER BRANCH name 0 0					#Trip line
+ 
+ # 3.000 BREAKER SYNC_MACH CCGTG16.01 0				#Trip sync machine 
+ 
+ # time.000 BREAKER INJ name 0 						#Trip injector
+ 
+ # 30.000 FAULT BUS 26 3.5 0. 						#3-ph short circuit (R to GND)
+ # 30.100 CLEAR BUS 26
+  
+ # 40.000 CHGPRM TWOP HVDC2 inv_ctl -1. 0			#Chnage Parameter
+ 
+ # time.000 VFAULT BUS name 0.5             		#3-ph shoirt circuit (V reached) 
+ # time.100 CLEAR BUS name
+ 
+500. STOP

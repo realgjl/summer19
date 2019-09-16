@@ -1,0 +1,13 @@
+GBdyn.dat
+GBhvdc.dat
+GBvoltrat.dat
+settings.dat
+
+init.trace
+disturb.dst
+obs.trj
+obs.dat
+cont.trace
+disc.trace
+
+BV G1
