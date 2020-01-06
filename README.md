@@ -16,6 +16,9 @@ Mac:
 ```terminal
 bash Miniconda3-latest-MacOSX-x86_64.sh
 ```
+Follow [this ariticle](https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac-os-x-7c1c7247d896) if your Mac terminal is zsh instead of bash.
+
+
 Linux:
 ```terminal
 bash Miniconda3-latest-Linux-x86_64.sh
