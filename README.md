@@ -16,8 +16,6 @@ Mac:
 ```terminal
 bash Miniconda3-latest-MacOSX-x86_64.sh
 ```
-Then, follow [this ariticle](https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac-os-x-7c1c7247d896) if your Mac terminal is zsh instead of bash.
-
 
 Linux:
 ```terminal
@@ -34,6 +32,9 @@ To make the changes take effect, close and then re-open your terminal window.
 To test your installation, in your terminal window or Anaconda Prompt, run the command ```conda list```.
 
 For a successful installation, a list of installed packages appears.
+
+### For Mac users
+Then, follow [this ariticle](https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac-os-x-7c1c7247d896) if your Mac terminal is zsh instead of bash.
 
 ### Configuring Conda
 Before first use, the conda package management system needs some initial configuration.
