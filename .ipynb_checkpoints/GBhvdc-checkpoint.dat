@@ -1,0 +1,93 @@
+# Interconnections
+
+
+!  MODEL NAME : twop_vsc_hq
+!  Data :
+!       prm(  1)=  R		phase reactor resistance in per unit
+!       prm(  2)=  L		phase reactor inductance in per unit
+!       prm(  3)=  Hdc		DC capacitor electrostatic inertia in seconds
+!       prm(  4)=  Snom	nominal rating of VSC
+!       prm(  5)=  Pnom	nominal active power of VSC
+!       prm(  6)=  Kp		current controller P gain
+!       prm(  7)=  Ki		current controller I gain
+!       prm(  8)=  Kpd		outer loop d-axis P gain
+!       prm(  9)=  Kid		outer loop d-axis I gain
+!       prm( 10)=  Kpq		outer loop q-axis P gain
+!       prm( 11)=  Kiq		outer loop q-axis I gain
+!       prm( 12)=  Kpw	PLL P gain
+!       prm( 13)=  Kiw	PLL I gain
+!       prm( 14)=  alpha1	P-V characteristic alpha coefficient
+!       prm( 15)=  beta1	P-V characteristic beta coefficient
+!       prm( 16)=  alpha2	Q-Vac characteristic alpha coefficient
+!       prm( 17)=  beta2	Q-Vac characteristic beta coefficient
+
+# VSC
+# East-West Interconnector
+  BUSDC DC12   320.  ;
+  BUSDC DC12IC   320.  ;
+  
+  LFRESV DC12   0.9821  0.  ;
+  LFRESV DC12IC   0.974511  0.  ;   #0.9944766
+  
+  LINE HVDC12IC DC12  DC12IC 3.025 0.00 0.00 1000.0 1  ; 
+  
+  TWOP  HVDC_VSC  12VSC  12  DC12  A  0.  0.  -500.0  0.  0.  0.  500.  0. 
+  0.01  0.2  0.03024  1110.  1000.  0.2574  57.2958  4.5  10.  0.1  30.  200  10000  1.  0.  -1.  0.  ;
+  
+  TWOP  HVDC_VSC  12ICVSC  12IC  DC12IC  A  0.  0.  500.0  0.  0.  0.  -500.  0.
+  0.01  0.2  0.03024  1110.  1000.  0.2574  57.2958  4.5  10.  0.1  30.  200  10000  0.  -1.  -1.  0.  ;
+  
+# Nemo
+  BUSDC DC27   400.  ;
+  BUSDC DC27IC   400.  ;
+  
+  LFRESV DC27   0.9727178  0.  ;
+  LFRESV DC27IC   0.96299  0.  ;   #0.9944766
+  
+  LINE HVDC27IC DC27  DC27IC 3.025 0.00 0.00 1000.0 1  ; 
+  
+  TWOP  HVDC_VSC  27VSC  27  DC27  A  0.  0.  -1000.0  0.  0.  0.  1000.  0.
+  0.01  0.2  0.03024  1110.  1000.  0.2574  57.2958  4.5  10.  0.1  30.  200  10000  1.  0.  -1.  0.  ;
+  
+  TWOP  HVDC_VSC  27ICVSC  27IC2  DC27IC  A  0.  0.  1000.0  0.  0.  0.  -1000.  0.
+  0.01  0.2  0.03024  1110.  1000.  0.2574  57.2958  4.5  10.  0.1  30.  200  10000  0.  -1.  -1.  0.  ;
+
+
+!  MODEL NAME : twop_HVDC_LCC           
+!  MODEL DESCRIPTION FILE : twop_HVDC_lcc.txt
+!  Data :
+!       prm(  1)=  p          ! number of poles (1 or 2)
+!       prm(  2)=  rec_ctl    ! initial rectifier control : 1= current control, 2= power control
+!       prm(  3)=  inv_ctl    ! initial inverter control : 1= voltage control, 2= gamma control
+!       prm(  4)=  Br         ! number of bridges in series in rectifier
+!       prm(  5)=  Bi         ! number of bridges in series in inverter
+!       prm(  6)=  Er         ! phase-to-phase open-circuit voltage (kV) on DC side of rectifier transformer with 1 pu voltage on AC side
+!       prm(  7)=  Ei         ! phase-to-phase open-circuit voltage (kV) on DC side of inverter transformer with 1 pu voltage on AC side
+!       prm(  8)=  Rcr        ! rectifier commutating resistance per bridge (in ohm)
+!       prm(  9)=  Xcr        ! rectifier commutating reactance per bridge (in ohm)
+!       prm( 10)=  Rci        ! inverter commutating resistance per bridge (in ohm)
+!       prm( 11)=  Xci        ! inverter commutating reactance per bridge (in ohm)
+!       prm( 12)=  RL         ! DC line series resistance (ohm)
+!       prm( 13)=  Rcomp      ! compounding resistance (voltage control by inverter) (ohm)
+!       prm( 14)=  Tp         ! time constant of power control (s); not used if current is controlled
+!       prm( 15)=  Idset      ! initial value (and setpoint if rec_ctl=1) of DC current (kA)
+!       prm( 16)=  nr         ! initial rectifier transformer ratio (pu/pu)
+!       prm( 17)=  ni         ! initial inverter transformer ratio (pu/pu)
+!       prm( 18)=  alphamin   ! minimum firing angle (rad)
+!       prm( 19)=  DeltaId    ! decrease in DC current when the inverter controls current (kA)
+!       prm( 20)=  gammamin   ! minimum extinctin angle (rad)
+
+# LCC
+# Moyle
+  TWOP  HVDC_LCC  HVDC1  5  5IC  A     0.  0.   -10.   -10.    0.   0.   10.   10. 
+  1     2       1     2    2    250.  250.  0.   2.1202  0.    2.1197 
+  3.0   0.     1.0  0.04   0.90  0.90   0.1       0.1      0.1      ;
+
+#
+  TWOP  HVDC_LCC  HVDC2  26  26IC  A    0.  0.  -1022.29966  -55.67607   0.   0.   1022.29966  55.67607 
+  1     2       1     2    2    450.00  450.00  0.   2.1202  0.    2.1197 
+  3.0   0.     1.0  2.25   0.9  0.9   0.1       2.0      0.1      ;
+#
+  TWOP  HVDC_LCC  HVDC3  27  27IC  A     0.  0.   -1597.99943  -1245.578631    0.   0.   1597.99943  1245.578631 
+  1     2       1     2    2    540.00  540.00  0.   2.1202  0.    2.1197 
+  3.0   0.     1.0  3.0   0.90  0.90   0.1       0.1      0.1      ;
