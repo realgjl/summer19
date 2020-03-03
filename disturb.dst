@@ -1,5 +1,6 @@
  0.000 CONTINUE SOLVER BD 0.020 0.001 0. ABL
 
- 100.000 BREAKER SYNC_MACH CCGTG11.01 0				#Trip sync machine 
+ 100.000 BREAKER BRANCH 8-10a 0 0				#Trip sync machine
+ 100.000 BREAKER BRANCH 8-10b 0 0				#Trip sync machine
 
 800. STOP

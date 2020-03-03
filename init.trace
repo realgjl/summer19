@@ -1,0 +1,450 @@
+COMMENTS FROM DATA FILES:
+
+!  MODEL NAME : twop_vsc_hq                                                                                                       
+!  Data :                                                                                                                         
+!       prm(  1)=  R		phase reactor resistance in per unit                                                                        
+!       prm(  2)=  L		phase reactor inductance in per unit                                                                        
+!       prm(  3)=  Hdc		DC capacitor electrostatic inertia in seconds                                                             
+!       prm(  4)=  Snom	nominal rating of VSC                                                                                     
+!       prm(  5)=  Pnom	nominal active power of VSC                                                                               
+!       prm(  6)=  Kp		current controller P gain                                                                                  
+!       prm(  7)=  Ki		current controller I gain                                                                                  
+!       prm(  8)=  Kpd		outer loop d-axis P gain                                                                                  
+!       prm(  9)=  Kid		outer loop d-axis I gain                                                                                  
+!       prm( 10)=  Kpq		outer loop q-axis P gain                                                                                  
+!       prm( 11)=  Kiq		outer loop q-axis I gain                                                                                  
+!       prm( 12)=  Kpw	PLL P gain                                                                                                 
+!       prm( 13)=  Kiw	PLL I gain                                                                                                 
+!       prm( 14)=  alpha1	P-V characteristic alpha coefficient                                                                    
+!       prm( 15)=  beta1	P-V characteristic beta coefficient                                                                      
+!       prm( 16)=  alpha2	Q-Vac characteristic alpha coefficient                                                                  
+!       prm( 17)=  beta2	Q-Vac characteristic beta coefficient                                                                    
+!  MODEL NAME : twop_HVDC_LCC                                                                                                     
+!  MODEL DESCRIPTION FILE : twop_HVDC_lcc.txt                                                                                     
+!  Data :                                                                                                                         
+!       prm(  1)=  p          ! number of poles (1 or 2)                                                                          
+!       prm(  2)=  rec_ctl    ! initial rectifier control : 1= current control, 2= power control                                  
+!       prm(  3)=  inv_ctl    ! initial inverter control : 1= voltage control, 2= gamma control                                   
+!       prm(  4)=  Br         ! number of bridges in series in rectifier                                                          
+!       prm(  5)=  Bi         ! number of bridges in series in inverter                                                           
+!       prm(  6)=  Er         ! phase-to-phase open-circuit voltage (kV) on DC side of rectifier transformer with 1 pu voltage on 
+!       prm(  7)=  Ei         ! phase-to-phase open-circuit voltage (kV) on DC side of inverter transformer with 1 pu voltage on A
+!       prm(  8)=  Rcr        ! rectifier commutating resistance per bridge (in ohm)                                              
+!       prm(  9)=  Xcr        ! rectifier commutating reactance per bridge (in ohm)                                               
+!       prm( 10)=  Rci        ! inverter commutating resistance per bridge (in ohm)                                               
+!       prm( 11)=  Xci        ! inverter commutating reactance per bridge (in ohm)                                                
+!       prm( 12)=  RL         ! DC line series resistance (ohm)                                                                   
+!       prm( 13)=  Rcomp      ! compounding resistance (voltage control by inverter) (ohm)                                        
+!       prm( 14)=  Tp         ! time constant of power control (s)                                                                
+!       prm( 15)=  Idset      ! initial value (and setpoint if rec_ctl=1) of DC current (kA)                                      
+!       prm( 16)=  nr         ! initial rectifier transformer ratio (pu/pu)                                                       
+!       prm( 17)=  ni         ! initial inverter transformer ratio (pu/pu)                                                        
+!       prm( 18)=  alphamin   ! minimum firing angle (rad)                                                                        
+!       prm( 19)=  DeltaId    ! decrease in DC current when the inverter controls current (kA)                                    
+!       prm( 20)=  gammamin   ! minimum extinctin angle (rad)                                                                     
+
+
+
+SOLVER SETTINGS :
+   Using fully decomposed Scheme
+   Updating Jacobian only locally, whenever possible
+   Skipping Newton solution of converged components
+   Using COI reference frame
+   Variation of x in Jacobian computation : max( 0.1000E-04 |x|, 0.1000E-04)
+   Tolerance on network equations in pu (system base) :  0.1000E-03 pu
+   Tolerance on injector equations (absolute, relative) :  0.1000E-03 pu,  0.1000E-03 pu
+
+
+EXTRACTED RECORDS:
+
+   91 buses extracted from records
+  161 branches extracted from records
+   36 synchronous machines extracted from records
+       for a total of   1273 continuous time states
+                         252 discrete exciter states
+                         864 exciter parameters
+                          34 discrete torque states
+                         220 torque parameters
+    7 user-defined two-ports extracted from records
+   64 user-defined injectors extracted from records
+       for a total of    857 continuous time states
+                         328 discrete states
+                        2041 parameters
+   16 impedance loads extracted from records or created from mismatches
+   29 discrete controllers extracted from records
+
+NUMBER OF ISLANDS :    8
+
+    82 buses in island #     1
+     2 buses in island #     2
+     2 buses in island #     3
+     1 buses in island #     4 (includes a Thevenin equivalent)
+     1 buses in island #     5 (includes a Thevenin equivalent)
+     1 buses in island #     6 (includes a Thevenin equivalent)
+     1 buses in island #     7 (includes a Thevenin equivalent)
+     1 buses in island #     8 (includes a Thevenin equivalent)
+
+NUMBER OF SHUNTS :    82  (B_ type:     0)
+
+shunt                 at bus                 Qnom island breaker
+
+SHG1                  G1                     182.180      1    1
+SHG2                  G2                      39.160      1    1
+SHG3                  G3                      28.470      1    1
+SHG4                  G4                      60.660      1    1
+SHG5                  G5                     226.400      1    1
+SHG6                  G6                      40.060      1    1
+SHG7                  G7                     413.370      1    1
+SHG10                 G10                    449.130      1    1
+SHG11                 G11                    420.730      1    1
+SHG12                 G12                    601.280      1    1
+SHG15                 G15                    878.930      1    1
+SHG16                 G16                    831.800      1    1
+SHG17                 G17                    244.120      1    1
+SHG18                 G18                    647.230      1    1
+SHG19                 G19                    200.670      1    1
+SHG20                 G20                    265.180      1    1
+SHG21                 G21                      0.000      1    1
+SHG22                 G22                     40.970      1    1
+SHG23                 G23                   1270.800      1    1
+SHG25                 G25                    411.800      1    1
+SHG26                 G26                   1352.770      1    1
+SHG27                 G27                   1352.770      1    1
+SHG28                 G28                    155.790      1    1
+SHG29                 G29                    720.300      1    1
+SH1                   1                      159.000      1    1
+SH2                   2                      237.600      1    1
+SH3                   3                       84.000      1    1
+SH4                   4                      305.000      1    1
+SH5                   5                      216.000      1    1
+SH6                   6                      573.000      1    1
+SH7                   7                      456.700      1    1
+SH8                   8                       14.570      1    1
+SH9                   9                      397.080      1    1
+SH10                  10                     765.000      1    1
+SH11                  11                    1306.000      1    1
+SH12                  12                     676.000      1    1
+SH13                  13                     861.000      1    1
+SH14                  14                     243.000      1    1
+SH15                  15                     876.530      1    1
+SH16                  16                     346.400      1    1
+SH17                  17                     561.560      1    1
+SH18                  18                    4640.600      1    1
+SH19                  19                     564.200      1    1
+SH20                  20                     370.700      1    1
+SH21                  21                     489.290      1    1
+SH22                  22                    2082.400      1    1
+SH23                  23                    1737.300      1    1
+SH24                  24                     510.670      1    1
+SH25                  25                    3513.000      1    1
+SH26                  26                    1314.000      1    1
+SH27                  27                    1062.000      1    1
+SH28                  28                    1168.600      1    1
+SH29                  29                    1806.100      1    1
+SHL1                  L1                      29.900      1    1
+SHL2                  L2                      33.700      1    1
+SHL3                  L3                      35.800      1    1
+SHL4                  L4                      82.100      1    1
+SHL5                  L5                      32.700      1    1
+SHL6                  L6                      75.900      1    1
+SHL7                  L7                      45.300      1    1
+SHL8                  L8                       6.200      1    1
+SHL9                  L9                      11.100      1    1
+SHL10                 L10                    140.300      1    1
+SHL11                 L11                    197.700      1    1
+SHL12                 L12                     80.800      1    1
+SHL13                 L13                    147.000      1    1
+SHL14                 L14                    104.000      1    1
+SHL15                 L15                    160.300      1    1
+SHL16                 L16                    181.300      1    1
+SHL17                 L17                     70.300      1    1
+SHL18                 L18                    322.000      1    1
+SHL19                 L19                    131.900      1    1
+SHL20                 L20                     65.800      1    1
+SHL21                 L21                     56.900      1    1
+SHL22                 L22                    115.700      1    1
+SHL23                 L23                    281.700      1    1
+SHL24                 L24                     83.500      1    1
+SHL25                 L25                    552.800      1    1
+SHL26                 L26                     94.700      1    1
+SHL27                 L27                     10.200      1    1
+SHL28                 L28                    149.100      1    1
+SHL29                 L29                    138.100      1    1
+
+NUMBER OF SYNCHRONOUS MACHINES :   36
+
+machine              at bus                 V            P           Q        delta    sat    island  br
+                     excit model          vf(pu)   torque model               Tm(pu)
+
+HYDRG1.03            G1                   1.0000    129.77198     -7.47672    75.14   1.0999       1    1
+                     ST1A                 1.3069   HYDRO_GENERIC1            0.81801
+CCGTG2.01            G2                   1.0000   1039.38853    219.54769    94.58   1.0000       1    1
+                     ST1A                 2.0067   tor_ENTSOE_simp           0.84099
+HYDRG2.03            G2                   1.0000     15.85564      3.34915    71.72   1.1197       1    1
+                     ST1A                 1.5293   HYDRO_GENERIC1            0.84101
+HYDRG3.03            G3                   1.0000    390.35332    126.45137    63.24   1.1287       1    1
+                     ST1A                 1.6183   HYDRO_GENERIC1            0.88661
+COALG4.02            G4                   1.0000   1778.60850    454.42769    79.01   1.0000       1    1
+                     ST1A                 2.0302   tor_ENTSOE_simp           0.87673
+HYDRG4.03            G4                   1.0000    318.25492     81.31292    57.07   1.1228       1    1
+                     ST1A                 1.5553   HYDRO_GENERIC1            0.87673
+NUCLG5.04            G5                   1.0000    881.99876    -28.91539    89.32   1.0000       1    1
+                     ST1A                 1.9976   CONSTANT                  0.98000
+NUCLG7.04            G7                   1.0000    833.68089    -45.21639    89.44   1.0000       1    1
+                     ST1A                 1.8717   CONSTANT                  0.90978
+CCGTG10.01           G10                  1.0000    130.21851     10.80325    73.73   1.0000       1    1
+                     ST1A                 1.9117   tor_ENTSOE_simp           0.90921
+COALG10.02           G10                  1.0000    279.04329     23.15011    73.73   1.0000       1    1
+                     ST1A                 1.9117   tor_ENTSOE_simp           0.90923
+NUCLG10.04           G10                  1.0000    790.61843     65.59163    73.73   1.0000       1    1
+                     ST1A                 1.9117   CONSTANT                  0.90922
+CCGTG11.01           G11                  1.0000    910.14357    236.53584    60.77   1.0000       1    1
+                     ST1A                 2.0665   tor_ENTSOE_simp           0.84741
+COALG11.02           G11                  1.0000   1189.25670    309.07414    60.77   1.0000       1    1
+                     ST1A                 2.0665   tor_ENTSOE_simp           0.84741
+NUCLG11.04           G11                  1.0000   1198.35379    311.43837    60.77   1.0000       1    1
+                     ST1A                 2.0665   CONSTANT                  0.84741
+CCGTG12.01           G12                  1.0000   1461.63945    163.74545    64.87   1.0000       1    1
+                     ST1A                 1.9912   tor_ENTSOE_simp           0.89235
+HYDRG12.03           G12                  1.0000   1522.29520    170.54063    39.72   1.1131       1    1
+                     ST1A                 1.4843   HYDRO_GENERIC1            0.89235
+NUCLG12.04           G12                  1.0000    312.79124     35.04157    64.87   1.0000       1    1
+                     ST1A                 1.9912   CONSTANT                  0.89235
+COALG15.02           G15                  1.0000   6242.56140   1237.54477    65.85   1.0000       1    1
+                     ST1A                 2.0308   tor_ENTSOE_simp           0.91489
+CCGTG16.01           G16                  1.0000   6067.35587   1923.51484    61.51   1.0000       1    1
+                     ST1A                 2.1873   tor_ENTSOE_simp           0.88332
+COALG16.02           G16                  1.0000   3109.38141    985.75746    61.51   1.0000       1    1
+                     ST1A                 2.1873   tor_ENTSOE_simp           0.88332
+COALG17.02           G17                  1.0000   1607.99954    356.16507    53.69   1.0000       1    1
+                     ST1A                 1.9474   tor_ENTSOE_simp           0.84454
+CCGTG18.01           G18                  1.0000    693.42811    -17.87781    63.60   1.0000       1    1
+                     ST1A                 1.8382   tor_ENTSOE_simp           0.92384
+COALG18.02           G18                  1.0000   1065.57292    -27.47237    63.60   1.0000       1    1
+                     ST1A                 1.8382   tor_ENTSOE_simp           0.92385
+CCGTG19.01           G19                  1.0000   1693.72715    778.23906    47.83   1.0000       1    1
+                     ST1A                 2.3075   tor_ENTSOE_simp           0.86058
+NUCLG20.04           G20                  1.0000   1253.99995    304.41375    51.01   1.0000       1    1
+                     ST1A                 2.1830   CONSTANT                  0.92889
+CCGTG21.01           G21                  1.0000    534.99999    325.95498    37.67   1.0000       1    1
+                     ST1A                 2.1930   tor_ENTSOE_simp           0.71191
+CCGTG22.01           G22                  1.0000    323.00003    130.02860    41.15   1.0000       1    1
+                     ST1A                 1.9650   tor_ENTSOE_simp           0.74219
+CCGTG23.01           G23                  1.0000   4380.90965    889.21360    49.45   1.0000       1    1
+                     ST1A                 2.0154   tor_ENTSOE_simp           0.90161
+COALG23.02           G23                  1.0000   1229.57290    249.57213    49.45   1.0000       1    1
+                     ST1A                 2.0154   tor_ENTSOE_simp           0.90161
+CCGTG25.01           G25                  1.0000   1708.00001    941.02958    37.66   1.0000       1    1
+                     ST1A                 2.4367   tor_ENTSOE_simp           0.92344
+CCGTG26.01           G26                  1.0000   3155.17903    309.73566    53.85   1.0000       1    1
+                     ST1A                 1.9655   tor_ENTSOE_simp           0.88434
+COALG26.02           G26                  1.0000   1274.82115    125.14585    53.85   1.0000       1    1
+                     ST1A                 1.9655   tor_ENTSOE_simp           0.88434
+CCGTG28.01           G28                  1.0000   1086.22713    219.47212    45.31   1.0000       1    1
+                     ST1A                 1.9604   tor_ENTSOE_simp           0.81770
+COALG28.02           G28                  1.0000    142.77294     28.84726    45.31   1.0000       1    1
+                     ST1A                 1.9604   tor_ENTSOE_simp           0.81770
+CCGTG29.01           G29                  1.0000    560.65055   -205.93936    73.52   1.0000       1    1
+                     ST1A                 1.7756   tor_ENTSOE_simp           0.96778
+NUCLG29.04           G29                  1.0000    462.33729   -169.82673    73.52   1.0000       1    1
+                     ST1A                 1.7756   CONSTANT                  0.96778
+
+NUMBER OF INJECTORS :       64
+
+model name         injector name        at bus                  V            P            Q
+
+THEVEQ               LCC1                 5IC                 0.9914    -10.00000    -10.00000
+THEVEQ               VSC1                 12IC                0.9821   -500.00000      0.00000
+THEVEQ               LCC2                 26IC                0.9988  -1022.29966    -55.67607
+THEVEQ               VSC2                 27IC2               0.9727  -1000.00000      0.00000
+THEVEQ               LCC3                 27IC                0.9962  -1597.99943  -1245.57863
+WT3                  WF3G1.05             G1                  1.0000    422.59884     -9.58697
+WT4                  CONVG1.06            G1                  1.0000    301.62817    -17.37810
+WT3                  WF3G2.05             G2                  1.0000    208.75872     44.09563
+WT3                  WF3G3.05             G3                  1.0000    389.64664    126.22245
+WT3                  WF3G4.05             G4                  1.0000     50.63109     12.93605
+WT4                  CONVG4.06            G4                  1.0000    189.50495     48.41779
+WT3                  WF3G6.05             G6                  1.0000    778.31027     47.40323
+WT4                  CONVG6.06            G6                  1.0000     92.69012     26.05902
+WT3                  WF3G7.05             G7                  1.0000    610.44756    -33.10888
+WT4                  CONVG7.06            G7                  1.0000    602.86958    -32.69787
+WT4                  CONVG10.06           G10                 1.0000   1617.11695    134.15997
+WT4                  CONVG11.06           G11                 1.0000   1278.24618    332.20148
+WT3                  WF3G12.05            G12                 1.0000     56.27339      6.30423
+WT3                  WF3G15.05            G15                 1.0000     29.23913      5.79646
+WT4                  CONVG16.06           G16                 1.0000    661.27161    209.64087
+WT4                  CONVG19.06           G19                 1.0000    920.27118    182.63146
+WT3                  WF3G23.05            G23                 1.0000    569.51795    115.59771
+WT4                  CONVG27.06           G27                 1.0000   1035.72251    -89.42794
+WT4                  CONVG29.06           G29                 1.0000    719.01404    -81.59689
+vfd_load             L_1                  L1                  0.9961   -489.99981   -242.50016
+vfd_load             L_2                  L2                  0.9985   -542.99991   -419.99923
+vfd_load             L_3                  L3                  0.9950   -599.00062   -263.39999
+vfd_load             L_4                  L4                  0.9991  -1327.30108   -923.50065
+vfd_load             L_5                  L5                  0.9914   -505.80065   -260.19918
+vfd_load             L_6                  L6                  0.9986  -1303.39998   -827.69849
+vfd_load             L_7                  L7                  0.9996   -753.00025   -496.90020
+vfd_load             L_8                  L8                  0.9996   -118.49996    -44.09987
+vfd_load             L_9                  L9                  0.9996   -134.90000   -192.40018
+vfd_load             L_10                 L10                 0.9910  -2569.00077  -1224.99733
+vfd_load             L_11                 L11                 0.9951  -3413.39826  -2182.69776
+vfd_load             L_12                 L12                 0.9906  -1208.99919  -1111.99834
+vfd_load             L_13                 L13                 0.9985  -2544.99931  -1498.49983
+vfd_load             L_14                 L14                 0.9983  -1843.50063  -1065.70054
+vfd_load             L_15                 L15                 0.9930  -2669.00119  -1902.40109
+vfd_load             L_16                 L16                 0.9971  -1691.49565  -3389.59241
+vfd_load             L_17                 L17                 0.9969  -1095.50003   -942.09855
+vfd_load             L_18                 L18                 0.9946  -5437.50081  -3667.00165
+vfd_load             L_19                 L19                 0.9963  -2066.10022  -1740.99981
+vfd_load             L_20                 L20                 0.9950  -1041.36008   -788.79981
+vfd_load             L_21                 L21                 0.9959   -718.99982   -848.19816
+vfd_load             L_22                 L22                 0.9983  -1861.80014  -1498.09864
+vfd_load             L_23                 L23                 0.9912  -4781.40037  -3185.80407
+vfd_load             L_24                 L24                 0.9939  -1423.89979   -894.70062
+vfd_load             L_25                 L25                 0.9920  -9804.69700  -5569.69311
+vfd_load             L_26                 L26                 0.9907  -1450.00019  -1426.00383
+vfd_load             L_27                 L27                 0.9919   -462.79969   -359.69983
+vfd_load             L_28                 L28                 0.9959  -2761.99864  -1242.69966
+vfd_load             L_29                 L29                 0.9919  -2601.99818   -923.70112
+SVC_HQ_GENERIC1      SVC2                 2                   0.9855      0.00000      3.16928
+SVC_HQ_GENERIC1      SVC9                 9                   0.9803      0.00000   -142.76000
+SVC_HQ_GENERIC1      SVC18                18                  0.9788      0.00000     21.68872
+SVC_HQ_GENERIC1      SVC21                21                  0.9647      0.00000     11.20667
+SVC_HQ_GENERIC1      SVC22                22                  0.9669      0.00000     12.09994
+SVC_HQ_GENERIC1      SVC23                23                  0.9750      0.00000      5.71619
+SVC_HQ_GENERIC1      SVC25                25                  0.9528      0.00000     29.72175
+SVC_HQ_GENERIC1      SVC27                27                  0.9727      0.00000      8.24184
+SVC_HQ_GENERIC1      SVC28                28                  0.9794      0.00000      6.72941
+SVC_HQ_GENERIC1      SVC29                29                  0.9993      0.00000      0.61234
+VFAULT               VFAULT               G1                  1.0000      0.00000      0.00000
+
+NUMBER OF TWO-PORTS :        7
+
+model name         two-port name         bus 1                V           Pinj        Qinj
+                                         bus 2                V           Pinj        Qinj
+
+HVDC_VSC             12VSC                12                 0.9821   -500.00000      0.00000
+                                          DC12               0.9821    500.00000      0.00000
+HVDC_VSC             12ICVSC              12IC               0.9821    500.00000      0.00000
+                                          DC12IC             0.9745   -500.00000      0.00000
+HVDC_VSC             27VSC                27                 0.9727  -1000.00000      0.00000
+                                          DC27               0.9727   1000.00000      0.00000
+HVDC_VSC             27ICVSC              27IC2              0.9727   1000.00000      0.00000
+                                          DC27IC             0.9630  -1000.00000      0.00000
+HVDC_LCC             HVDC1                5                  0.9870    -10.00000    -10.00000
+                                          5IC                0.9914     10.00000     10.00000
+HVDC_LCC             HVDC2                26                 0.9751  -1022.29966    -55.67607
+                                          26IC               0.9988   1022.29966     55.67607
+HVDC_LCC             HVDC3                27                 0.9727  -1597.99943  -1245.57863
+                                          27IC               0.9962   1597.99943   1245.57863
+
+NUMBER OF IMPEDANCE LOADS :    16  (M_ type:    16 )
+
+load name              bus name                  P          Q
+
+M_G1                   G1                      -0.000     14.761
+M_G6                   G6                      -0.000   -171.412
+M_G19                  G19                     -0.000   -240.218
+M_G27                  G27                      0.000    804.851
+M_G29                  G29                      0.002    182.512
+M_5                    5                      -10.002     -9.997
+M_7                    7                       -0.034      0.014
+M_8                    8                        0.033     -0.020
+M_12                   12                    -500.000      0.001
+M_16                   16                       0.018      0.010
+M_17                   17                       0.002      0.019
+M_27                   27                    -999.999      0.000
+M_DC12                 DC12                    -4.597      0.000
+M_DC12IC               DC12IC                   0.698      0.000
+M_DC27                 DC27                    -0.982      0.000
+M_DC27IC               DC27IC                  -9.029      0.000
+
+NUMBER OF BIG M_LOADS :     8
+
+load name              bus name                  P          Q
+
+M_G1                   G1                      -0.000     14.761
+M_G6                   G6                      -0.000   -171.412
+M_G19                  G19                     -0.000   -240.218
+M_G27                  G27                      0.000    804.851
+M_G29                  G29                      0.002    182.512
+M_5                    5                      -10.002     -9.997
+M_12                   12                    -500.000      0.001
+M_27                   27                    -999.999      0.000
+
+
+INJECTORS NOT IN STEADY STATE (tol:    0.001000) :
+
+WF3G1.05            
+   eq. #   7: -0.2865460E-02
+
+
+
+WF3G2.05            
+   eq. #   7:  0.4690068E-02
+   eq. #   8:  0.1563356E-02
+
+
+
+WF3G3.05            
+   eq. #   7: -0.3417157E-02
+   eq. #   8: -0.1139052E-02
+
+
+
+WF3G4.05            
+   eq. #   7: -0.2305666E-01
+   eq. #   8: -0.7685555E-02
+
+
+
+WF3G12.05           
+   eq. #   7: -0.5184983E-01
+   eq. #   8: -0.1728328E-01
+
+
+
+WF3G15.05           
+   eq. #   7: -0.7608659E-01
+   eq. #   8: -0.2536220E-01
+
+
+
+WF3G23.05           
+   eq. #   7: -0.3243369E-02
+   eq. #   8: -0.1081123E-02
+
+
+
+CONVG29.06          
+   eq. #   3:  0.1807344E-02
+
+
+
+
+TWO-PORTS NOT IN STEADY STATE (tol:    0.001000) :
+
+12VSC               
+   eq. #  11: -0.2103544E-02
+
+
+
+12ICVSC             
+   eq. #  11: -0.2103544E-02
+
+
+
+27VSC               
+   eq. #  11: -0.8577887E-02
+
+
+
+27ICVSC             
+   eq. #  11: -0.8577887E-02
+
+
+
+HVDC3               
+   eq. #  19: -0.1019010E-02
+
+
