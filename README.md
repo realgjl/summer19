@@ -1,6 +1,6 @@
 # summer19
 
-## Installing applications and libraries with Conda
+## Installing Python 3 applications and libraries with Conda
 ### Download the [Miniconda installer](https://repo.continuum.io/miniconda/)
 At a command prompt, enter (Mac):
 ```terminal
