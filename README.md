@@ -34,7 +34,8 @@ To test your installation, in your terminal window or Anaconda Prompt, run the c
 For a successful installation, a list of installed packages appears.
 
 ### For Mac users
-Then, follow [this ariticle](https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac-os-x-7c1c7247d896) if your Mac terminal is zsh instead of bash.
+If the terminal is zsh, follow [this ariticle](https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac-os-x-7c1c7247d896).
+If it's bash based terminal, continue to the next step.
 
 ### Configuring Conda
 Before first use, the conda package management system needs some initial configuration.
