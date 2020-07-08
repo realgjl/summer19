@@ -33,9 +33,28 @@ To test your installation, in your terminal window or Anaconda Prompt, run the c
 
 For a successful installation, a list of installed packages appears.
 
-### For Mac users
-If the terminal is zsh, follow [this ariticle](https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac-os-x-7c1c7247d896).
-If it's bash-based terminal, continue to the next step.
+#### To check if the Python has been installed successfully, in terminal:
+```terminal
+python -V
+```
+It's ok if the python version is 3.x nor 2.x.
+
+### For Mac users (macOS 10.15 Catalina, macOS 11.0 Big Sur, and later)
+The default shell of terminal is now "zsh" instead of "bash". 
+
+According to the offcial doc from [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html), we need to find the path/direction of miniconda3's folder, for instance, in my case:
+```terminal
+/Users/realgjl/miniconda3
+```
+Then in the Terminal.app:
+```terminal
+source /Users/realgjl/miniconda3/bin/activate
+```
+```terminal
+conda init zsh
+```
+Check the python version again and/or check if "conda" command works.
+
 
 ### Configuring Conda
 Before first use, the conda package management system needs some initial configuration.
