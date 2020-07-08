@@ -55,6 +55,8 @@ conda init zsh
 ```
 Check the python version again and/or check if "conda" command works.
 
+p.s., to show the hidden files in Mac, press: "command" + "shift" + ".".
+
 
 ### Configuring Conda
 Before first use, the conda package management system needs some initial configuration.
