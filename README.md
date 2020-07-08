@@ -37,12 +37,12 @@ For a successful installation, a list of installed packages appears.
 ```terminal
 python -V
 ```
-It's ok if the python version is 3.x nor 2.x.
+It's done if the python version is 3.x nor 2.x.
 
 ### For Mac users (macOS 10.15 Catalina, macOS 11.0 Big Sur, and later)
 The default shell of terminal is now "zsh" instead of "bash". 
 
-According to the offcial doc from [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html), we need to find the path/direction of miniconda3's folder, for instance, in my case:
+According to the offcial doc from [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) (search "zsh" in the webpage), we need to find the path/direction of miniconda3's folder, for instance, in my case:
 ```terminal
 /Users/realgjl/miniconda3
 ```
