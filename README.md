@@ -4,7 +4,7 @@
 ### Download the [Miniconda installer](https://repo.continuum.io/miniconda/)
 At a command prompt, enter (Mac):
 ```terminal
-curl -o ./Miniconda3-latest-MacOSX-x86_64.sh -k https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+curl -o ./Miniconda3-latest-MacOSX-x86_64.sh -k https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 ```
 In Linux (Ubuntu, CentOS, ...):
 ```terminal
