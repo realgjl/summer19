@@ -85,9 +85,9 @@ It's preferred to install [scipy](https://anaconda.org/conda-forge/scipy) instea
 conda install -c anaconda scipy
 ```
 ![](https://i.loli.net/2019/07/29/5d3df74fda1a288903.png)
-#### [jupyterlab](https://anaconda.org/conda-forge/jupyterlab)
+#### [jupyterlab](https://anaconda.org/anaconda/jupyterlab)
 ```terminal
-conda install -c conda-forge jupyterlab
+conda install -c anaconda jupyterlab
 ```
 To make sure that you have the MKL libraries installed, you can test via ipython:
 ```terminal
