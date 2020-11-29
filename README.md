@@ -74,20 +74,19 @@ at the command prompt. If there are any updates, you will be prompted to agree t
 Add the a number of channels. This step is required so that the conda installer knows where to get the installation files for your applications from. At the command prompt:
 ```terminal
 conda config --add channels conda-forge
-conda config --add channels anaconda
 conda config --add channels apetros
 ```
 
 ### Installing Python packages and applications
-#### [scipy](https://anaconda.org/anaconda/scipy)
+#### [scipy](https://anaconda.org/conda-forge/scipy)
 It's preferred to install [scipy](https://anaconda.org/conda-forge/scipy) instead of independently installing numpy, mkl and other independencies. Scipy will automatically install packages like intel-openmp, mkl, mkl-service, numpy and blas.
 ```terminal
-conda install -c anaconda scipy
+conda install -c conda-forge scipy
 ```
 ![](https://i.loli.net/2019/07/29/5d3df74fda1a288903.png)
-#### [jupyterlab](https://anaconda.org/anaconda/jupyterlab)
+#### [jupyterlab](https://anaconda.org/conda-forge/jupyterlab)
 ```terminal
-conda install -c anaconda jupyterlab
+conda install -c conda-forge jupyterlab
 ```
 To make sure that you have the MKL libraries installed, you can test via ipython:
 ```terminal
@@ -109,7 +108,7 @@ mkl_info:
 
 #### [pandas](https://anaconda.org/conda-forge/pandas)
 ```terminal
-conda install -c conda-forge pandas 
+conda install -c conda-forge pandas
 ```
 
 #### [matplotlib](https://anaconda.org/conda-forge/matplotlib)
