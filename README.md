@@ -114,7 +114,6 @@ ram = pyramses.sim()
 ```
 Alternatively, you can install pyramses via [pypi](https://pypi.org/project/pyramses/).
 
-### Other package(s) and application(s)
 #### intel
 If the error "libifport.so.5: : cannot open shared object file" occurs, you may have to install Intel's redistributables package.
 You can review this [intel's forum](https://software.intel.com/comment/1942377) as a reference.
