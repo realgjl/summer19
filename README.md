@@ -77,17 +77,14 @@ conda config --add channels conda-forge
 conda config --add channels apetros
 ```
 
-### Installing Python packages and applications
-#### [scipy](https://anaconda.org/conda-forge/scipy)
+### Install libraries
+#### Necessaries: scipy jupyterlab pandas matplotlib
+```terminal
+conda install -c conda-forge scipy jupyterlab pandas matplotlib
+```
 It's preferred to install [scipy](https://anaconda.org/conda-forge/scipy) instead of independently installing numpy, mkl and other independencies. Scipy will automatically install packages like intel-openmp, mkl, mkl-service, numpy and blas.
-```terminal
-conda install -c conda-forge scipy
-```
 ![](https://i.loli.net/2019/07/29/5d3df74fda1a288903.png)
-#### [jupyterlab](https://anaconda.org/conda-forge/jupyterlab)
-```terminal
-conda install -c conda-forge jupyterlab
-```
+
 To make sure that you have the MKL libraries installed, you can test via ipython:
 ```terminal
 ipython
@@ -104,16 +101,6 @@ mkl_info:
     library_dirs = ['/home/home01/el17jg/miniconda3/lib']
     define_macros = [('SCIPY_MKL_H', None), ('HAVE_CBLAS', None)]
     include_dirs = ['/home/home01/el17jg/miniconda3/include']
-```
-
-#### [pandas](https://anaconda.org/conda-forge/pandas)
-```terminal
-conda install -c conda-forge pandas
-```
-
-#### [matplotlib](https://anaconda.org/conda-forge/matplotlib)
-```terminal
-conda install -c conda-forge matplotlib 
 ```
 
 #### [pyramses](https://pypi.org/project/pyramses/)
