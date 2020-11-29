@@ -23,21 +23,9 @@ bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
 ### Setting the install directory
-Follow the prompts on the installer screens.
+Follow the prompts on the installer screens. If you are unsure about any setting, accept the defaults. You can change them later. To make the changes take effect, close and then re-open your terminal window. To test your installation, in your terminal window or Anaconda Prompt, run the command ```conda list```. For a successful installation, a list of installed packages appears.
 
-If you are unsure about any setting, accept the defaults. You can change them later.
-
-To make the changes take effect, close and then re-open your terminal window.
-
-To test your installation, in your terminal window or Anaconda Prompt, run the command ```conda list```.
-
-For a successful installation, a list of installed packages appears.
-
-#### To check if the Python has been installed successfully, in terminal:
-```terminal
-python -V
-```
-It's done if the python version is 3.x nor 2.x.
+Check if the Python has been installed successfully (version 3.x): ```python -V```
 
 ### For Mac users (macOS 10.15 Catalina, macOS 11.0 Big Sur, and later)
 The default shell of terminal is now "zsh" instead of "bash". 
