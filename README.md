@@ -1,4 +1,5 @@
 # summer19
+This summer intern project was in fact a fork of my undergraduate thesis project [realgjl/sfcNordic](https://github.com/realgjl/sfcNordic).
 
 ## Installing Python 3 applications and libraries with Conda
 ### Download the [Miniconda installer](https://repo.continuum.io/miniconda/)
