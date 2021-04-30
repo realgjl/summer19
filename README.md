@@ -65,7 +65,7 @@ at the command prompt. If there are any updates, you will be prompted to agree t
 ### Install libraries
 #### Necessaries: scikit-learn jupyterlab scipy pandas matplotlib
 ```terminal
-pip install scikit-learn jupyterlab scipy pandas matplotlib
+conda install -c conda-forge scikit-learn jupyterlab scipy pandas matplotlib
 ```
 It's preferred to install [scipy](https://anaconda.org/conda-forge/scipy) instead of independently installing numpy, mkl and other independencies. Scipy will automatically install packages like intel-openmp, mkl, mkl-service, numpy and blas.
 ![](https://i.loli.net/2019/07/29/5d3df74fda1a288903.png)
