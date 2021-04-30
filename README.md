@@ -62,16 +62,10 @@ conda update conda
 ```
 at the command prompt. If there are any updates, you will be prompted to agree their installation.
 
-Add the a number of channels. This step is required so that the conda installer knows where to get the installation files for your applications from. At the command prompt:
-```terminal
-conda config --add channels conda-forge
-conda config --add channels apetros
-```
-
 ### Install libraries
-#### Necessaries: scipy jupyterlab pandas matplotlib
+#### Necessaries: scikit-learn jupyterlab scipy pandas matplotlib
 ```terminal
-conda install -c conda-forge scipy jupyterlab pandas matplotlib
+pip install scikit-learn jupyterlab scipy pandas matplotlib
 ```
 It's preferred to install [scipy](https://anaconda.org/conda-forge/scipy) instead of independently installing numpy, mkl and other independencies. Scipy will automatically install packages like intel-openmp, mkl, mkl-service, numpy and blas.
 ![](https://i.loli.net/2019/07/29/5d3df74fda1a288903.png)
