@@ -66,7 +66,8 @@ at the command prompt. If there are any updates, you will be prompted to agree t
 #### Necessaries: pytorch (Deep Learning package) scikit-learn (general Machine Learning package) jupyterlab notebook scipy pandas matplotlib
 ```terminal
 conda install pytorch torchvision torchaudio -c pytorch
-conda install -c conda-forge scikit-learn jupyterlab notebook scipy pandas matplotlib
+conda install -c conda-forge scikit-learn
+conda install -c conda-forge jupyterlab notebook scipy pandas matplotlib
 ```
 It's preferred to install [scipy](https://anaconda.org/conda-forge/scipy) instead of independently installing numpy, mkl and other independencies. Scipy will automatically install packages like intel-openmp, mkl, mkl-service, numpy and blas.
 ![](https://i.loli.net/2019/07/29/5d3df74fda1a288903.png)
