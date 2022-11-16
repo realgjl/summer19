@@ -1,4 +1,6 @@
 # summer19
+Paper (draft): https://realgjl.com/paper/summer19.pdf 
+
 This summer intern project was in fact a fork of my undergraduate thesis project [realgjl/sfcNordic](https://github.com/realgjl/sfcNordic).
 
 Acknowledgments: Prof. Petros Aristidou, Dr Sultan Alghamdi, et al.
