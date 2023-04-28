@@ -5,6 +5,11 @@ This summer intern project was in fact a fork of my undergraduate thesis project
 
 Acknowledgments: Prof. Petros Aristidou, Dr Sultan Alghamdi, et al.
 
+## Suummary
+1. Built a communication layer on top of an existing Smart Grid simulator. 
+2. Designed physical and mathematical models (centralised secondary frequency control controller) in Python. Designed analytical models for testing and training results, such as the impacts of time delay and emergencies’ impacts on the stability of control (insensitive data analysis) in Python and MATLAB. 
+3. Collaborated with three senior researchers, and performed a comparative analysis with decentralised networks and optimized algorithm performance to ensure that the network can be restored to normal within 300 seconds after a cyber attack or massive power outage.
+
 ## Installing Python 3 applications and libraries with Conda
 ### Download the [Miniconda installer](https://repo.continuum.io/miniconda/)
 At a command prompt, enter (Mac):
